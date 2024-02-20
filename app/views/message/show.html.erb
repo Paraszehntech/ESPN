@@ -1,9 +1,9 @@
-<div class="card">
+<div class="card" style="background-color:gray; color: white">
   <h5 class="card-header">Featured</h5>
   <div class="card-body">
-    <h2 class="card-title"><%= @message.title %></h2>
-    <p class="card-text">Posted<%=time_ago_in_words(@message.created_at)%> ago</p>
-    <p class="card-text fs-5"><%= @message.desc %></p>
+    <h2 class="card-title" style= "color: white"><%= @message.title %></h2>
+    <p class="card-text"  style= "color: black">Posted <%= time_ago_in_words(@message.created_at)%> ago</p>
+    <p class="card-text fs-5" style= "color: black"><%= @message.desc %></p>
     <p class="d-inline-flex gap-1">
       <% if user_signed_in?  %>
       <% if current_user.id == @message.user_id%>
@@ -19,4 +19,4 @@
   <%= render 'comments/form' %> 
 </div>
 </div>
-<%= link_to 'Back',root_path,class:"btn btn-info btn-lg mt-3"%>
+<%= link_to 'Back',root_path,class:"btn btn-secondary btn-lg mt-3"%>
